@@ -1,4 +1,3 @@
-from path import path
 from datetime import timedelta
 from dotenv import load_dotenv
 import os
