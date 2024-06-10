@@ -19,3 +19,9 @@ class NoteSerializer(serializers.ModelSerializer):
         fields = ["id","tittle","content","created_at"]
         # to no allow writting user
         extra_kwargs = {"author": {"read_only":True}}
+
+class NoteEditSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Note
+        fields = ["id", "title", "content"]
+        read_only_fields = ["id", "author", "created_at"]
