@@ -10,7 +10,7 @@ from  . models import Note
 
 class NoteListCreate(generics.ListCreateAPIView):
     serializer_class = NoteSerializer
-    Permission_class = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     # to only fetch notes written by only a user automatically
     def get_queryset(self):
         user = self.request.user
